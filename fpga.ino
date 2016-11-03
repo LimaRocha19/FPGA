@@ -11,7 +11,7 @@ void setup() {
   pinMode(clk, INPUT_PULLUP);
   pinMode(right, OUTPUT);
   pinMode(wrong, OUTPUT);
-  attachInterrupt(digitalPinToInterrupt(clk), bordered, RISING);
+  attachInterrupt(digitalPinToInterrupt(clk), bordered, FALLING);
 }
 
 void loop() {
