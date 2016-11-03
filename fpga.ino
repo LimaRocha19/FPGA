@@ -13,7 +13,7 @@ bool mustRead = false;
 void setup() {
   Serial.begin(9600);
   Serial.flush();
-  Serial.print("Bem-vindo ao jogo de Cara ou Coroa mais legal de todos os tempos");
+  Serial.print("Bem-vindo ao jogo de Cara ou Coroa mais legal de todos os tempos\n");
   pinMode(TX, INPUT);
   pinMode(clk, INPUT_PULLUP);
   attachInterrupt(digitalPinToInterrupt(clk), bordered, FALLING);
@@ -22,17 +22,17 @@ void setup() {
 void loop() {
   if(mustRead) {
     int tx = digitalRead(TX);
-    if(tx == HIGH) {
-      Serial.print("Acertooooooooou miserávi\n");
-      acertos++;
+    if(tx == LOW) {
+      Serial.print("Errroooooooooou\n");
+      erros++;
       Serial.print(acertos);
       Serial.print(" acertos e ");
       Serial.print(erros);
       Serial.print(" erros\n");
       mustRead = false;
     } else {
-      Serial.print("Errroooooooooou\n");
-      erros++;
+      Serial.print("Acertooooooooou miseravi\n");
+      acertos++;
       Serial.print(acertos);
       Serial.print(" acertos e ");
       Serial.print(erros);
