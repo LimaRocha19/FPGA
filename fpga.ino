@@ -43,11 +43,11 @@ void loop() {
       Serial.print(erros);
       Serial.print(" erros\n");
       tone(audio, 1500, 200);
-      delay(50);
+      delay(200);
       tone(audio, 1500, 200);
-      delay(50);
+      delay(200);
       tone(audio, 1500, 200);
-      delay(50);
+      delay(200); 
       mustRead = false;
     }
   }
